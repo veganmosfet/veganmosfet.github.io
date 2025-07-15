@@ -1,0 +1,5 @@
+title: IT meets OT 
+theme: jekyll-theme-primer
+markdown: kramdown
+plugins:
+  - jekyll-feed
