@@ -57,3 +57,43 @@ p code, li code, span code {
     color: #f0f6fc;
   }
 }
+/* Footer styles */
+.post-footer {
+  margin-top: 2em;
+  padding-top: 1em;
+  border-top: 1px solid #e1e4e8;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.contact-links {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0.5em;
+}
+
+.contact-links li {
+  display: inline;
+  margin-right: 1em;
+}
+
+.contact-links a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.contact-links a:hover {
+  text-decoration: underline;
+}
+
+/* Dark mode overrides for footer */
+@media (prefers-color-scheme: dark) {
+  .post-footer {
+    border-top: 1px solid #30363d;
+    color: #8b949e;
+  }
+
+  .contact-links a {
+    color: #58a6ff;
+  }
+}
