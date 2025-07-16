@@ -104,7 +104,7 @@ A cloud API can be used to redirect the *device <> cloud* traffic from the Shine
 ```
 curl 'https://server.growatt.com/ftp.do' -H 'content-type: application/x-www-form-urlencoded; charset=UTF-8' -H 'cookie: JSESSIONID=X; SERVERID=X' -H 'user-agent: okhttp' --data-raw 'action=setDatalogParam&dataLogSn=XGDXXXXXXX&paramType=1&param_1=x.x.x.x&param_2=' 
 ```
-> [!NOTE]
+> [📄NOTE📄]
 > Missing API authorization has been fixed.
 
 After this command, the targeted ShineWIFI-X stick tries to connect to the given IP.
