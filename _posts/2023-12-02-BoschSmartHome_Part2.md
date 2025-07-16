@@ -60,7 +60,7 @@ The full setup is depicted in the figure below:
 
 ![p7](https://raw.githubusercontent.com/veganmosfet/BoschSmartHome/main/P2/pictures/p7.png)
 
-Next, we have to find the probe position. In order to automate this step, I wrote a couple of small scripts to control the target and signal generator (see [code](https://raw.githubusercontent.com/veganmosfet/BoschSmartHome/main/P2/code/) folder) -- my excellent software skills are still sufficient for that 😜 --. The programmed signal generator will then, after the programmed delay, trigger the pulse generator to create the electromagnetic field.
+Next, we have to find the probe position. In order to automate this step, I wrote a couple of small scripts to control the target and signal generator (see [code](https://github.com/veganmosfet/BoschSmartHome/tree/main/P2/code) folder) -- my excellent software skills are still sufficient for that 😜 --. The programmed signal generator will then, after the programmed delay, trigger the pulse generator to create the electromagnetic field.
 
 ### Inducing the Fault
 
