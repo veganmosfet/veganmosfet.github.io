@@ -15,6 +15,29 @@ A security analysis of the popular Hoymiles HM microinverter system revealed cri
 > [⚠️IMPORTANT⚠️]
 > **The critical cloud vulnerabilities have been patched.** However, it is still possible to reproduce part of the proof-of-concept on own, registered devices in a local network. See the section [Post-patch Reproduction](#post-patch-reproduction).
 
+A few videos:
+
+* The time bomb in the DTU:
+
+<video width="640" height="360" controls>
+  <source src="/assets/ccc_dtu.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+* Simulated periodic short circuit of the inverter (hear the relays):
+
+<video width="640" height="360" controls>
+  <source src="/assets/ccc_relay.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+* Real short circuit after malicious firmware update (!):
+
+<video width="640" height="360" controls>
+  <source src="/assets/ccc_boom.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 ## Table of content
 
 [System under Test](#TOE) \
