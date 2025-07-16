@@ -2,6 +2,11 @@
 layout: default
 ---
 
+<header class="page-header" role="banner" style="display: flex; justify-content: space-between; align-items: center;">
+  <h1 class="project-name">{{ site.title }}</h1>
+  <img src="{{ '/assets/logo.png' | relative_url }}" alt="Logo" style="height: 40px;">
+</header>
+
 {{ content }}
 
 <footer style="margin-top: 2em; padding-top: 1em; border-top: 1px solid #ccc; font-size: 0.9em;">
