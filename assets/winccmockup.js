@@ -1,9 +1,8 @@
-// wincc-mock-server.js
+// simple wincc mockup server API
 
 const express = require('express');
 const basicAuth = require('basic-auth');
 const bodyParser = require('body-parser');
-
 
 const app = express();
 const port = 4000;
@@ -75,9 +74,13 @@ app.put('/WinCCRestService/tagManagement/Value/:tagName', (req, res) => {
   if (value === undefined) {
     return res.status(400).json({ error: "Missing value in body" });
   }
+  if (tagName in tags) {
+    tags[tagName] = value;
+    res.json({ tagName, newValue: value });
+  } else {
+    res.status(404).json({ error: `Tag '${tagName}' not found` });
+  }
 
-  tags[tagName] = value;
-  res.json({ tagName, newValue: value });
 });
 
 // List all mock connections (just return something basic)
