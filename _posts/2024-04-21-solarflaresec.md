@@ -15,7 +15,7 @@ Different vulnerabilities are described:
 * A firmware update could be remotely triggered on any connected inverter, multiple inverters could be updated at once. Only the *uuid* of the devices was needed.
 * The firmware update images were not cryptographically signed, so that manipulated update images could be crafted and used to update inverters remotely. Valid, but manipulated firmware update images could be uploaded to the cloud servers. Especially, some power electronics and relays could be switched on and off almost arbitrary. 
 
-> [!NOTE]
+> [📄NOTE📄]
 > Vulnerabilities have been fixed
 
 ## Table of content
@@ -244,55 +244,6 @@ Here is an example of plain response (json list, truncated):
         "device_sn": "Axxxxxxxxxx",
         "dev_status": 1,
         "arm_version": null,
-        "ps_short_name": "Bxxxxxxxxxx",
-        "communication_model": 1361
-    },
-    {
-        "logger_code": 247,
-        "is_enable": 1,
-        "firmware_version_info": {
-            "sdsp_version": "SUBCTL-S_04011.01.01",
-            "mdsp_version": "BERYL-S_03011.01.64",
-            "lcd_version": "BERYL-S_01011.01.32",
-            "afci_version": "AFD_06001.02.03"
-        },
-        "is_haveversion": 1,
-        "device_type": 1,
-        "uuid": xxxxxxx,
-        "afci_version": "AFD_06001.02.03",
-        "sdsp_version": "SUBCTL-S_04011.01.01",
-        "battery_version": null,
-        "communication_dev_sn": "Bxxxxxxxxxx",
-        "temp_version": null,
-        "pvd_version": null,
-        "mdsp_version": "BERYL-S_03011.01.64",
-        "chnnl_id": 2,
-        "ps_name": "Sxxxxxxxxxxxxxxxxxx",
-        "grid_type_id": 0,
-        "mcu_version": null,
-        "m_version": null,
-        "ps_id": xxxxxxx,
-        "device_code": 1,
-        "country_id": 1,
-        "communication_dev_uuid": xxxxxx,
-        "cpld_version": null,
-        "device_model": "SG12RT",
-        "lcd_version": "BERYL-S_01011.01.32",
-        "data_flag_detail": 1813,
-        "bat_version": null,
-        "upgrade_version": null,
-        "device_name": "Inverter1",
-        "device_area": "Grid-connected point 1_2#unit",
-        "version10": null,
-        "system_version": null,
-        "device_model_id": 743,
-        "version12": null,
-        "version11": null,
-        "sn": "Bxxxxxxxxxx",
-        "device_sn": "Axxxxxxxxxx",
-        "dev_status": 1,
-        "arm_version": null,
-        "version4": "AFD_06001.02.03",
         "ps_short_name": "Bxxxxxxxxxx",
         "communication_model": 1361
     }
@@ -569,7 +520,8 @@ A `zip` file called `POCD.zip` has been generated with following files:
 * `datetime` (not changed)
 * `SUNSTONE-S_03011.01.20_DECRYPTED.sgu`
 * `Version instruction.xml` with following content:
-```xml
+
+```
 <?xml version='1.0' encoding='utf-8'?>
 <root type="inverter">
 	<point name="SUNSTONE-S_03011.01.20.sgu" type="inverter" update_seq="1" />
