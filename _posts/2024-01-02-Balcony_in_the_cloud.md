@@ -124,7 +124,7 @@ Here is a block diagram of the MI:
 
 Again, the JTAG interface is open so we can connect a TI JTAG probe (Standard TI 14 pin JTAG connector pinout) and use TI [code composer studio](https://www.ti.com/tool/CCSTUDIO) to do some tests. The flash content can be easily dumped too. The device does not implement secure boot, so that modified firmware can be executed. 
 
-> [!NOTE]
+> [📄NOTE📄]
 > Note that the MI implements a short circuit / over-current protection (hardware circuit) on the grid side. However, the grid side MOSFETs can be overheated and may break down and trigger a shortcircuit.
 
 
