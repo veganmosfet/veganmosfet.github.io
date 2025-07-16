@@ -10,6 +10,8 @@ layout: post
 
 In this report a security analysis of the **Growatt MIC600TL-X + ShineWIFI-X** solar inverter including its cloud connectivity is presented. 
 
+The security analysis of the Growatt MIC600TL-X solar inverter and ShineWIFI-X system revealed critical vulnerabilities allowing unauthorized access to WiFi credentials and remote firmware manipulation through insecure cloud communication. Through a combination of weak API authorization, unencrypted communication (using simple XOR with a static key), and lack of firmware signature verification, an attacker can remotely install malicious firmware by only knowing the device's serial number. The proof-of-concept demonstrated successful exploitation by redirecting cloud traffic and installing manipulated firmware that could control both safety relays, potentially leading to device damage or misuse of the internet connection for malicious purposes.
+
 ## Table of content
 
 [TOE](#toe) \
