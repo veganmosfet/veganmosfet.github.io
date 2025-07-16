@@ -10,9 +10,10 @@ layout: post
 
 In this report a very popular microinverter system for balcony power plants is analyzed from a cybersecurity perspective. 
 
+A security analysis of the popular Hoymiles HM microinverter system revealed critical cloud vulnerabilities (now patched) that allowed unauthorized access and control of any registered device through API weaknesses and insecure firmware upload mechanisms. The hardware investigation exposed unprotected debugging interfaces and lack of secure boot in both the DTU gateway and microinverter components, allowing local firmware modifications. While the most severe cloud-based attacks have been remediated, the findings highlight significant security gaps in IoT energy devices, with local hardware vulnerabilities still exploitable on owned devices.
+
 > [⚠️IMPORTANT⚠️]
 > **The critical cloud vulnerabilities have been patched.** However, it is still possible to reproduce part of the proof-of-concept on own, registered devices in a local network. See the section [Post-patch Reproduction](#post-patch-reproduction).
-
 
 ## Table of content
 
