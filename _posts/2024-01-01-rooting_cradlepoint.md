@@ -127,11 +127,11 @@ Here is the recording of the rootfs download:
 
 ![ROOTFS](https://raw.githubusercontent.com/veganmosfet/Rooting-the-Cradlepoint-IBR600/main/pictures/rootfs.png)
 
-For extracting the rootfs contents some post processing is required. First, the raw data is extracted with Saleae's SPI decoder feature and transformed into binary with a simple [Python script](./scripts/make_bin.py). However, the raw data still contains some handshake information, see the waveform:
+For extracting the rootfs contents some post processing is required. First, the raw data is extracted with Saleae's SPI decoder feature and transformed into binary with a simple [Python script](https://github.com/veganmosfet/Rooting-the-Cradlepoint-IBR600/tree/main/scripts). However, the raw data still contains some handshake information, see the waveform:
 
 ![handshake](https://raw.githubusercontent.com/veganmosfet/Rooting-the-Cradlepoint-IBR600/main/pictures/handshake.png)
 
-With a [second script](./scripts/extract_nand.py) we can remove the handshakes. Then we also remove all `0xFFFFFFFF` at the end of the binary file.
+With a [second script](https://github.com/veganmosfet/Rooting-the-Cradlepoint-IBR600/tree/main/scripts) we can remove the handshakes. Then we also remove all `0xFFFFFFFF` at the end of the binary file.
 
 Finally, we have the root file system:
 
