@@ -11,7 +11,7 @@ layout: post
 
 In this report a security analysis of a **Sungrow solar inverter system and its associated cloud** is presented. 
 Different vulnerabilities are described:
-* It was possible to extract sensitive data from the cloud remotely with a simple installer account: serial numbers and *uuid* of all registered inverters and connectivity devices associated to all registered users. 
+* It was possible to extract sensitive data from the cloud remotely with a simple installer account: serial numbers and *uuid* of all registered inverters and connectivity devices associated to all registered users. At the time of this analysis, the sum of all (online) inverter’s nominal power connected to the European server was about 10.070 GW.
 * A firmware update could be remotely triggered on any connected inverter, multiple inverters could be updated at once. Only the *uuid* of the devices was needed.
 * The firmware update images were not cryptographically signed, so that manipulated update images could be crafted and used to update inverters remotely. Valid, but manipulated firmware update images could be uploaded to the cloud servers. Especially, some power electronics and relays could be switched on and off almost arbitrary. 
 
