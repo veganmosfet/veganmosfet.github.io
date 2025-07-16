@@ -15,7 +15,7 @@ Different vulnerabilities are described:
 * The MQTT broker used for device <> cloud communication was poorly secured, so that messages could be spoofed or injected. Inverters settings could be manipulated.
 * Especially the remote firmware update process is done via MQTT: the firmware update images could be manipulated and malicious images distributed. 
 
-> [!NOTE]
+> [📄NOTE📄]
 >  Critical vulnerabilities have been fixed
 
 ## Table of content
@@ -111,7 +111,7 @@ curl 'https://www.solaxcloud.com/blue/phoebus/update/getUpdatePage' \
   name="current"\r\n\r\n1\r\n------WebKitFormBoundaryI--\r\n'
 ```
 
-And here is a sample of the result (2 plants):
+And here is a sample of the result (1 plant):
 
 ```json
 [
@@ -164,67 +164,6 @@ And here is a sample of the result (2 plants):
     "loaderVersion": "1.09",
     "armVersion": "1.27",
     "inverterVersion": "1.29",
-    "inverterSlaverVer": "0.00",
-    "biVersion": "",
-    "batteryMasterVer": null,
-    "ids": "000000",
-    "transportType": null,
-    "authorizeFlag": null,
-    "useStatus": null,
-    "siteAccessFlag": null,
-    "websiteType": null,
-    "dversion": null,
-    "aversion": null
-  },
-  {
-    "id": "000000",
-    "sid": "000000",
-    "wifiSN": "SR6xxxxxxx",
-    "deviceType": "8",
-    "moduleType": null,
-    "wifiVersion": "3.009.03",
-    "updateFlag": 0,
-    "updateStatusFlag": null,
-    "upgradeTime": null,
-    "nation": "GERMANY",
-    "batteryFlag": "1",
-    "feedEnable": null,
-    "blockFlag": null,
-    "progress": null,
-    "type": null,
-    "value": null,
-    "batteryType": null,
-    "batterySlaverVer": null,
-    "batterySlaverVer2": null,
-    "chargeArmVer": null,
-    "inverterType": 14,
-    "agentId": null,
-    "agentIds": null,
-    "firmId": null,
-    "inverterSN": null,
-    "batterySN": null,
-    "firmIds": null,
-    "isSub": null,
-    "subUserId": null,
-    "installerId": null,
-    "currentUserId": null,
-    "userId": null,
-    "subGroupId": null,
-    "batteryBrand": null,
-    "siteName": "x@gmail.com Site 1",
-    "batterySlaveVer1": null,
-    "userName": "x@gmail.com",
-    "loginName": "x@gmail.com",
-    "deviceSN": "Hxxxxxxxxxxxxx",
-    "batterySlaverType": null,
-    "enableFlag": 1,
-    "inverterSnList": null,
-    "upgradeGroupId": null,
-    "siteId": 0000000000000000000,
-    "siteIds": "0000000000000000000",
-    "loaderVersion": "1.09",
-    "armVersion": "1.24",
-    "inverterVersion": "1.23",
     "inverterSlaverVer": "0.00",
     "biVersion": "",
     "batteryMasterVer": null,
