@@ -16,7 +16,7 @@ The shutter control ("Rolladensteuerung" in German) is again our guest for today
 
 ![p1](https://raw.githubusercontent.com/veganmosfet/BoschSmartHome/main/P3/pictures/p1.png)
 
-This nice device makes your shutters smart and is connected over a wireless interface to the Smart Home Controller. This time we will attack the wireless protocol which is definitely easier to do than [EM-FI](./../P2/README.md). To perform the analysis we need a tool to sniff the communication and generate arbitrary packets. The shutter control device works in the 868 MHz ISM band, that's what the technical specification says (in German):
+This nice device makes your shutters smart and is connected over a wireless interface to the Smart Home Controller. This time we will attack the wireless protocol which is definitely easier to do than [EM-FI](https://veganmosfet.github.io/2023/12/02/BoschSmartHome_Part2.html). To perform the analysis we need a tool to sniff the communication and generate arbitrary packets. The shutter control device works in the 868 MHz ISM band, that's what the technical specification says (in German):
 
 > Funkfrequenz 868,3 MHz; 869,5 MHz
 
@@ -38,7 +38,7 @@ In the picture we can see that the microcontroller is writing some data into the
 
 ## The "Fuzzer"
 
-To hunt for simple implementation bugs I built a simple fuzzer for the communication protocol (the code can be found [here](https://raw.githubusercontent.com/veganmosfet/BoschSmartHome/main/P3/code/)). Since we'll fuzz the protocol via SPI, we need to find a way to control the SPI interface of the transceiver module. For this I desoldered a transceiver module from a "window contact" ("Fensterkontakt" in German) device and connected it to a [BusPirate](http://dangerousprototypes.com/docs/Bus_Pirate) over SPI. The Bus Pirate itself is connected to a PC over USB. Here's the setup:
+To hunt for simple implementation bugs I built a simple fuzzer for the communication protocol (the code can be found [here](https://github.com/veganmosfet/BoschSmartHome/tree/main/P3/code)). Since we'll fuzz the protocol via SPI, we need to find a way to control the SPI interface of the transceiver module. For this I desoldered a transceiver module from a "window contact" ("Fensterkontakt" in German) device and connected it to a [BusPirate](http://dangerousprototypes.com/docs/Bus_Pirate) over SPI. The Bus Pirate itself is connected to a PC over USB. Here's the setup:
 
 ![p5](https://raw.githubusercontent.com/veganmosfet/BoschSmartHome/main/P3/pictures/p5.png)
 
@@ -46,7 +46,7 @@ If you want to build it, this is the pinout of the RF module (top view). Connect
 
 ![px](https://raw.githubusercontent.com/veganmosfet/BoschSmartHome/main/P3/pictures/px.png)
 
-To access and configure the Bus Pirate in raw SPI mode (it's faster than normal mode), I wrote a [small old-school C program](https://raw.githubusercontent.com/veganmosfet/BoschSmartHome/main/P3/code/). It's also used to configure the CC1101 with the parameters extracted in the section above. I implemented simple state machines to receive or send arbitrary packets and perform manipulations. Here you can see some received packets sniffed from the SPI bus:
+To access and configure the Bus Pirate in raw SPI mode (it's faster than normal mode), I wrote a [small old-school C program](https://github.com/veganmosfet/BoschSmartHome/tree/main/P3/code). It's also used to configure the CC1101 with the parameters extracted in the section above. I implemented simple state machines to receive or send arbitrary packets and perform manipulations. Here you can see some received packets sniffed from the SPI bus:
 
 ![p6](https://raw.githubusercontent.com/veganmosfet/BoschSmartHome/main/P3/pictures/p6.png)
 
@@ -62,7 +62,7 @@ The upper communication layers are handled by the EFM32G210F128 microcontroller 
 
 Here are some information about the upper communication layers I was able to find by playing with the device:
 
-* Data scrambling is used (probably for better radio performance). It's implemented inside the EFM32 microcontroller. Packet scrambling and descrambling functionality is also implemented in my [fuzzer](https://raw.githubusercontent.com/veganmosfet/BoschSmartHome/main/P3/code/). Note, that reverse engineering the scrambling algorithm required on-chip debugging and firmware analysis in Ghidra.
+* Data scrambling is used (probably for better radio performance). It's implemented inside the EFM32 microcontroller. Packet scrambling and descrambling functionality is also implemented in my [fuzzer](https://github.com/veganmosfet/BoschSmartHome/tree/main/P3/code). Note, that reverse engineering the scrambling algorithm required on-chip debugging and firmware analysis in Ghidra.
 * Most of the packets are protected against manipulation, eavesdropping and replay attacks. The device uses AES128-CCM as described in [RFC3610](https://www.rfc-editor.org/rfc/rfc3610) and an individual initial key.
 * There are small unencrypted acknowledgment (ACK) packets (similar to ZigBee).
 
@@ -86,7 +86,7 @@ Here is a description of the different fields:
 | 14..17      | Encrypted MAC|
 | 18..25      | Encrypted payload|
 
-If we try to replay one of these packets with our [fuzzer](https://raw.githubusercontent.com/veganmosfet/BoschSmartHome/main/P3/code/), we get an ACK packet `06 4C 57 F4 53 D4 01` but nothing happens. This means that replay protection works as expected. The device only responds if the destination address is correct. However, the addresses can be easily eavesdropped over the RF channel.
+If we try to replay one of these packets with our [fuzzer](https://github.com/veganmosfet/BoschSmartHome/tree/main/P3/code), we get an ACK packet `06 4C 57 F4 53 D4 01` but nothing happens. This means that replay protection works as expected. The device only responds if the destination address is correct. However, the addresses can be easily eavesdropped over the RF channel.
 
 ## The Ping of Death
 
