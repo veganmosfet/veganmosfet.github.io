@@ -19,61 +19,6 @@ p code, li code, span code {
   border-radius: 4px;
 }
 
-/* Header styles */
-.site-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1em;
-  border-bottom: 1px solid #e1e4e8;
-  margin-bottom: 1.5em;
-}
-
-.site-header a {
-  text-decoration: none;
-  font-weight: bold;
-  color: inherit;
-}
-
-.github-logo img {
-  height: 32px;
-  width: 32px;
-  transition: transform 0.2s ease;
-}
-
-.github-logo img:hover {
-  transform: scale(1.1);
-}
-
-/* Footer styles */
-.post-footer {
-  margin-top: 2em;
-  padding-top: 1em;
-  border-top: 1px solid #e1e4e8;
-  font-size: 0.9em;
-  color: #555;
-}
-
-.contact-links {
-  list-style: none;
-  padding-left: 0;
-  margin-top: 0.5em;
-}
-
-.contact-links li {
-  display: inline;
-  margin-right: 1em;
-}
-
-.contact-links a {
-  color: #0366d6;
-  text-decoration: none;
-}
-
-.contact-links a:hover {
-  text-decoration: underline;
-}
-
 /* Dark mode overrides */
 @media (prefers-color-scheme: dark) {
   body {
@@ -110,18 +55,5 @@ p code, li code, span code {
 
   h1, h2, h3, h4, h5, h6 {
     color: #f0f6fc;
-  }
-
-  .site-header {
-    border-bottom: 1px solid #30363d;
-  }
-
-  .post-footer {
-    border-top: 1px solid #30363d;
-    color: #8b949e;
-  }
-
-  .contact-links a {
-    color: #58a6ff;
   }
 }
