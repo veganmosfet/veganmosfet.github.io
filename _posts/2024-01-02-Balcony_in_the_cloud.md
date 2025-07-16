@@ -10,7 +10,7 @@ layout: post
 
 In this report a very popular microinverter system for balcony power plants is analyzed from a cybersecurity perspective. 
 
-> [!IMPORTANT]
+> [⚠️IMPORTANT⚠️]
 > **The critical cloud vulnerabilities have been patched.** However, it is still possible to reproduce part of the proof-of-concept on own, registered devices in a local network. See the section [Post-patch Reproduction](#post-patch-reproduction).
 
 
@@ -266,7 +266,7 @@ Answer:
 Here are some instructions to reproduce part of the exploit chain post-patch. 
 Modifications of the firmware update files can be performed, then CRCs and Headers can be re-calculated according the the [image-format](#image-format) section. These modified update files can be installed into the devices according to the following instructions.
 
-> [!WARNING]
+> [⚠️WARNING⚠️]
 > By modifying the firmware of the MI, the control of the power electronics can be changed and this is safety relevant. **Do not connect a device with modified firmware to the grid**. A device with modified firmware can also be overheated / destroyed / bricked (DTU can be bricked too). I do not assume any responsibility for any damage.
 
 ### Restrictions
