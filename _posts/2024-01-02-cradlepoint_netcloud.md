@@ -6,11 +6,11 @@ layout: post
 
 <link rel="stylesheet" href="/assets/style.css">
 
+# NetCloud
+
 In this post we explore various techniques and vulnerabilities associated with Cradlepoint routers and NetCloud. 
 It details methods such as obtaining access tokens through SSH, decrypting NetCloud traffic using Wireshark, MITM attacks with mitmproxy, and exploiting insecure device registration using MAC addresses. 
 Additionally, it highlights a Remote Code Execution (RCE) vulnerability through Python pickle deserialization, which could lead to unauthorized access and manipulation of network devices; however, both the device registration and RCE vulnerabilities have been recently patched.
-
-# NetCloud
 
 - [Recon](#recon)
 - [Get Access Token](#get-access-token)
