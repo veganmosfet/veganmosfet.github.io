@@ -323,7 +323,7 @@ Using Wireshark, we find that the login procedure uses a similar challenge-respo
 
 ### Emulating a LOGO! Device Login Procedure
 
-With a simple web server we can emulate the login procedure of a LOGO! device, knowing that we can generate a valid certificate for which we own the private key. Our goal is to build a simple web server to get a valid TLS connection from LSC and record the password challenge-response procedure. A simple Python script and a certificate (incl. private key) can be found [here](https://raw.githubusercontent.com/veganmosfet/logologo/main/server/).
+With a simple web server we can emulate the login procedure of a LOGO! device, knowing that we can generate a valid certificate for which we own the private key. Our goal is to build a simple web server to get a valid TLS connection from LSC and record the password challenge-response procedure. A simple Python script and a certificate (incl. private key) can be found [here](https://github.com/veganmosfet/logologo/tree/main/server).
 
 First the Python script is started, then LSC is started and a connection to the emulated device is initiated. LSC will accept the certificate presented and asks for the password:
 
