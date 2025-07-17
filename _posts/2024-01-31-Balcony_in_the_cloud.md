@@ -1,6 +1,6 @@
 ---
 title: "Balcony in the cloud: Security analysis of the Hoymiles HM microinverter system "
-date: 2024-01-02
+date: 2024-01-31
 layout: post
 ---
 
