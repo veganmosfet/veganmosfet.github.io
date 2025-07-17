@@ -47,7 +47,7 @@ WPC Authentication / ECM:
 
 ## Get Access Token
 
-Read NetCloud token from a [patched router CLI](../README.md#flashing-the-nand-images):
+Read NetCloud token from a [patched router CLI](https://veganmosfet.github.io/2024/01/01/rooting_cradlepoint.html#flashing-the-new-firmware):
 
 Connect to the router via SSH:
 
