@@ -351,7 +351,7 @@ With a known password (in our case it is `xxxxxxxx`) we can compute the response
 
 ## Attack Scenario
 
-Assuming an attacker has access to the network to which the LOGO! is connected. First, he/she generates a valid LOGO! certificate and connects a computer to the same network with our custom [TLS server](https://raw.githubusercontent.com/veganmosfet/logologo/main/server/) to spoof the login procedure. Next, the attacker runs an ARP poisoning attack to MITM the victim's traffic. As soon as a valid user tries to connect to the targeted LOGO! with LSC, the connection will be re-routed to the attacker computer. 
+Assuming an attacker has access to the network to which the LOGO! is connected. First, he/she generates a valid LOGO! certificate and connects a computer to the same network with our custom [TLS server](https://github.com/veganmosfet/logologo/tree/main/server) to spoof the login procedure. Next, the attacker runs an ARP poisoning attack to MITM the victim's traffic. As soon as a valid user tries to connect to the targeted LOGO! with LSC, the connection will be re-routed to the attacker computer. 
 
 Since a valid certificate chain can be presented, the login procedure is initiated. The attacker can then record a valid challenge-response pair.
 
