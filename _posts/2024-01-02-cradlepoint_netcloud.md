@@ -78,9 +78,9 @@ You can use the `netcloud` command to register the router with the token:
 
 ## Decrypt NetCloud Traffic in Wireshark
 
-This step requires a rooted device (see [here](../README.md) for details).
+This step requires a rooted device (see [here](https://veganmosfet.github.io/2024/01/01/rooting_cradlepoint.html) for details).
 
-1. In the dumped rootfs set the `SSLKEYLOGFILE` environment variable in `/etc/rc` and [reflash](../README.md#flashing-our-custom-kernel-and-rootfs) the device:
+1. In the dumped rootfs set the `SSLKEYLOGFILE` environment variable in `/etc/rc` and [reflash](https://veganmosfet.github.io/2024/01/01/rooting_cradlepoint.html#flashing-our-custom-kernel-and-rootfs) the device:
 
 ```bash
 export SSLKEYLOGFILE=/tmp/ssl_key.txt
@@ -112,7 +112,7 @@ $ wget 192.168.0.1:8080/netcloud_dump.pcap
 
 6. Export TLS stream as YAML: `Follow` --> `TLS Stream` --> `Show Data as YAML`
 
-7. Finally, parse the YAML file with this [script](./scripts/parse_netcloud_packets_from_yaml.py).
+7. Finally, parse the YAML file with this [script](https://raw.githubusercontent.com/veganmosfet/Rooting-the-Cradlepoint-IBR600/main/netcloud/scripts/parse_netcloud_packets_from_yaml.py).
 
 ## MITM NetCloud Traffic with mitmproxy
 
@@ -156,7 +156,7 @@ $ pip install -e .
 -----END CERTIFICATE-----
 ```
 
-6. Fire up mitmproxy using [this](./scripts/mitmproxy_netcloud_logging.py) logging script:
+6. Fire up mitmproxy using [this](https://raw.githubusercontent.com/veganmosfet/Rooting-the-Cradlepoint-IBR600/main/netcloud/scripts/mitmproxy_netcloud_logging.py) logging script:
 
 ```bash
 $ mitmproxy --mode transparent --set confdir=$HOME/mitmproxy --rawtcp --tcp-hosts ".*" -s mitmproxy_netcloud_logging.py
@@ -212,4 +212,4 @@ if __name__ == '__main__':
     print(pickled)
 ```
 
-We didn’t run the attack against Netcloud servers, but were able to exploit the issue on the router (see example PoC [here](./scripts/mitmproxy_netcloud_rce.py)). This vulnerability has been patched.
+We didn’t run the attack against Netcloud servers, but were able to exploit the issue on the router (see example PoC [here](https://raw.githubusercontent.com/veganmosfet/Rooting-the-Cradlepoint-IBR600/main/netcloud/scripts/mitmproxy_netcloud_rce.py)). This vulnerability has been patched.
