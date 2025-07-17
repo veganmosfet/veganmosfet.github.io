@@ -19,5 +19,3 @@ An admin dashboard with http basic auth and weak credentials (*admin* / *changei
 ![Dashboard4](/pictures/bosch_dashboard4.png)
 
 ![Dashboard5](/pictures/bosch_dashboard5.png)
-
-![Dashboard6](/pictures/bosch_dashboard6.png)
