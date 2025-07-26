@@ -1,0 +1,59 @@
+/* Light mode styles (fallback / default) */
+body {
+  background-color: white;
+  color: black;
+}
+
+pre, code {
+  background-color: #f6f8fa;
+  color: black;
+  padding: 0.5em;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+/* Inline code */
+p code, li code, span code {
+  background-color: #f0f0f0;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+}
+
+/* Dark mode overrides */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #0d1117;
+    color: #c9d1d9;
+  }
+
+  a {
+    color: #58a6ff;
+  }
+
+  pre, code {
+    background-color: #161b22 !important;
+    color: #c9d1d9 !important;
+  }
+
+  .highlight {
+    background-color: #161b22 !important;
+    color: #c9d1d9 !important;
+    border-radius: 6px;
+    padding: 1em;
+  }
+
+  .highlight pre, .highlight code {
+    background-color: transparent !important;
+    color: inherit !important;
+  }
+
+  p code, li code, span code {
+    background-color: #21262d !important;
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #f0f6fc;
+  }
+}
