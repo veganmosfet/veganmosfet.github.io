@@ -185,7 +185,7 @@ open -a calculator
 echo "Boom"
 ```
 
-The result (note that only one permission for *echo* is asked):
+The result (note that only one permission for *echo* is asked) can be seen in the video at the beginning or this post.
 
 💥Re-Re-Boom!💥
 
