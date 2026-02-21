@@ -11,8 +11,29 @@
     <script>
       (function () {
         var targetOrigin = "https://veganmosfet.codeberg.page";
-        var path = window.location.pathname === "/404.html" ? "/" : window.location.pathname;
-        var redirectTo = targetOrigin + path + window.location.search + window.location.hash;
+        var path = window.location.pathname;
+        var postMatch = path.match(
+          /^\/(\d{4})\/(\d{2})\/(\d{2})\/([^/]+?)(?:\.html?)?\/?$/i
+        );
+        var normalizedPath = path;
+
+        if (path === "/404.html") {
+          normalizedPath = "/";
+        } else if (postMatch) {
+          normalizedPath =
+            "/posts/" +
+            postMatch[1] +
+            "-" +
+            postMatch[2] +
+            "-" +
+            postMatch[3] +
+            "-" +
+            postMatch[4] +
+            "/";
+        }
+
+        var redirectTo =
+          targetOrigin + normalizedPath + window.location.search + window.location.hash;
         window.location.replace(redirectTo);
       })();
     </script>
