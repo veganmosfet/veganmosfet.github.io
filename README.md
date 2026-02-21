@@ -1,2 +1,0 @@
-# veganmosfet.github.io
-Blog
